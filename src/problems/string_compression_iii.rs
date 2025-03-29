@@ -1,9 +1,11 @@
+//! https://leetcode.com/problems/string-compression-iii/
+
 use crate::Solution;
 
 impl Solution {
     pub fn compressed_string(word: String) -> String {
         let iter = word.as_bytes().into_iter();
-        let mut result: Vec<u8> =  vec![];
+        let mut result: Vec<u8> = vec![];
 
         let mut byte = 0;
         let mut count = 0;
@@ -14,7 +16,7 @@ impl Solution {
             } else if byte == *b && count < 9 {
                 count += 1;
             } else {
-                result.push(b'0'+count);
+                result.push(b'0' + count);
                 result.push(byte);
                 byte = *b;
                 count = 1;
@@ -22,7 +24,7 @@ impl Solution {
         }
 
         if count > 0 {
-            result.push(b'0'+count);
+            result.push(b'0' + count);
             result.push(byte);
         }
 

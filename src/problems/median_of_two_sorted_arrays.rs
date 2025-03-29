@@ -1,8 +1,13 @@
+//! https://leetcode.com/problems/median-of-two-sorted-arrays/
+
 use crate::Solution;
 
 impl Solution {
     /// https://leetcode.com/problems/median-of-two-sorted-arrays/
-    pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
+    pub fn find_median_sorted_arrays(
+        nums1: Vec<i32>,
+        nums2: Vec<i32>,
+    ) -> f64 {
         let (a, b) = if nums1.len() <= nums2.len() {
             (&nums1, &nums2)
         } else {
@@ -28,7 +33,7 @@ impl Solution {
                     (max_left_a.max(max_left_b) + min_right_a.min(min_right_b)) as f64 / 2.0
                 } else {
                     max_left_a.max(max_left_b) as f64
-                }
+                };
             } else if max_left_a > min_right_b {
                 right = partition_a - 1;
             } else {

@@ -1,11 +1,13 @@
+//! https://leetcode.com/problems/minimum-total-distance-traveled/
+
 use crate::Solution;
 
 impl Solution {
-    pub fn minimum_total_distance(mut robot: Vec<i32>, mut factory: Vec<Vec<i32>>) -> i64 {
-        let mut factory = factory
-            .into_iter()
-            .map(|v| (v[0], v[1]))
-            .collect::<Vec<_>>();
+    pub fn minimum_total_distance(
+        mut robot: Vec<i32>,
+        factory: Vec<Vec<i32>>,
+    ) -> i64 {
+        let mut factory = factory.into_iter().map(|v| (v[0], v[1])).collect::<Vec<_>>();
 
         let n = robot.len();
         let m = factory.len();
