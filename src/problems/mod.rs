@@ -2,6 +2,7 @@ mod course_schedule;
 mod course_schedule_ii;
 mod delete_characters_to_make_fancy_string;
 mod longest_cycle_in_a_graph;
+mod longest_palindromic_substring;
 mod longest_substring_without_repeating_characters;
 mod median_of_two_sorted_arrays;
 mod minimum_height_trees;
